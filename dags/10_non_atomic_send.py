@@ -39,6 +39,7 @@ def _calculate_stats(**context):
     Path(output_path).parent.mkdir(exist_ok=True)
     stats.to_csv(output_path, index=False)
 
+    # CSV에 작성 후 이메일을 보내면 단일 기능에서 두 가지 작업을 수행하게 되어 원자성이 깨짐
     _email_stats(stats, email="user@example.com")
 
 
